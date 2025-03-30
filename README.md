@@ -1,6 +1,6 @@
-# Portfólio - Anderson Silva
+# Portfólio - DevWeb
 
-Este é o meu portfólio de desenvolvimento web, onde apresento meus projetos e habilidades em front-end e back-end. O site foi desenvolvido utilizando **HTML, CSS, JavaScript e Bootstrap** para proporcionar uma experiência responsiva e moderna.
+Este é um portfólio de desenvolvimento web, onde apresento projetos e habilidades em front-end e back-end. O site foi desenvolvido utilizando **HTML, CSS, JavaScript e Bootstrap** para proporcionar uma experiência responsiva e moderna.
 
 ## 🚀 Tecnologias Utilizadas
 
