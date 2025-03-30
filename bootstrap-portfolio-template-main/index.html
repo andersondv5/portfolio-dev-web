@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevWeb</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap-callout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav id="scrolling_navbar" class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">DevWeb</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav fw-bold">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#travel">Projetos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div data-bs-spy="scroll" data-bs-target="#scrolling_navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
+
+    <section class="min-vh-100 d-flex flex-wrap bg-black align-content-center" id="home">
+      <div class="container d-flex align-items-center py-5">
+        <div class="col text-center bg-white m-4 p-4 text-black bg-opacity-100 rounded-5 border border-2 border-black">
+          <img class="img-fluid col-lg-2 col-sm-6 col-xs-6 mb-4">
+          <h1 class="display-2 text-dark mb-3" style="font-weight: bold; font-size: 46px;">Transformamos ideias em <br>
+            experiências digitais!</h1>
+          <p class="text-dark fs-5 mb-6">Criamos interfaces modernas, minimalistas e funcionais <br>
+            para elevar sua presença online.</p>
+          <a class="btn btn-dark btn-lg active rounded-pill mb-3" href="#sobre">Sobre</a>
+          <a class="btn btn-light btn-lg rounded-pill mb-3 border border-dark" href="#contact">Contato</a>
+        </div>
+      </div>
+    </section>
+
+    <section data-bs-spy="scroll" data-bs-target="#scrolling_navbar" class="container py-5" id="sobre">
+      <div class="text-center py-5">
+        <h2 class="fw-bolder">Sobre</h2>
+        <p class="fs-5">Nossa missão é transformar ideias em soluções digitais eficientes e inovadoras.
+
+          <br><br><br>
+
+          Somos uma empresa de tecnologia especializada na criação e implementação
+          de sistemas web responsivos, integração com bancos de dados e APIs.
+        </p>
+      </div>
+
+    </section>
+
+    <section data-bs-spy="scroll" data-bs-target="#scrolling_navbar" class="bg-black py-5" id="travel">
+      <div class="container">
+        <div class="text-white-50 text-center py-5">
+          <h2 class="fw-bolder text-white">Projetos</h2>
+          <p class="fs-5">Confira alguns dos nossos projetos</p>
+        </div>
+    
+        <div class="row justify-content-center pb-4" id="gallery">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img class="img-thumbnail img-modal" src="image/bikcraft.png" data-bs-toggle="modal" data-bs-target="#imageModal" data-live="https://andersondv5.github.io/bikcraft/">
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img class="img-thumbnail img-modal" src="image/listagem.png" data-bs-toggle="modal" data-bs-target="#imageModal" data-live="https://andersondv5.github.io/Listagem-de-produtos/">
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img class="img-thumbnail img-modal" src="image/lockin.png" data-bs-toggle="modal" data-bs-target="#imageModal" data-live="https://andersondv5.github.io/Lock-In/">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Modal de Imagem -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 800px; cursor: pointer;">
+        <div class="modal-content bg-black border-0">
+          <div class="modal-header border-0">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img id="modalImage" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <script>
+      document.querySelectorAll('.img-modal').forEach(img => {
+        img.addEventListener('click', function() {
+          const modalImage = document.getElementById('modalImage');
+          modalImage.src = this.src;
+    
+          // Redireciona para o live ao clicar na imagem do modal
+          modalImage.onclick = function() {
+            window.open(img.getAttribute('data-live'), '_blank');
+          };
+        });
+      });
+    </script>
+    
+    <style>
+      /* Ajuste do tamanho das imagens no grid */
+      .img-thumbnail {
+        width: 100%;
+        height: 250px; /* Define um tamanho fixo para manter a proporção */
+        object-fit: cover; /* Mantém a imagem ajustada sem distorção */
+        border-radius: 10px;
+      }
+    </style>
+    
+    
+    
+  <section data-bs-spy="scroll" data-bs-target="#scrolling_navbar" class="bg-dark py-5" id="contact">
+    <div class="container">
+      <div class="text-white text-center py-5">
+        <h2 class="fw-bolder">Contato</h2>
+        <p class="fs-5">Estamos disponíveis para novos trabalhos, entre em contato!</p>
+      </div>
+
+      <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-9 col-sm-10 col-11 mx-auto">
+        <form action="" class="text-white fs-6">
+          <div class="mb-3">
+            <label class="form-label text-white">Nome</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white">Email</label>
+            <input type="email" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white">Mensagem</label>
+            <textarea type="text" rows="10" class="form-control"></textarea>
+          </div>
+          <div class="d-grid gap-2 col-lg-4 col-md-4 mx-auto">
+            <button class="btn btn-success btn-lg rounded-pill">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-light">
+    <div class="container">
+      <p class="copyright-text text-center fs-8 py-4 mb-0">Copyright © 2025 <a class="text-dark" href="https://github.com/andersondv5" target="_blank">@andersonsilva</a></p>
+    </div>
+    </div>
+
+  </footer>
+
+  </div>
+
+  <script>
+    function switchStyle() {
+      if (document.getElementById('styleSwitch').checked) {
+        document.getElementById('gallery').classList.add("custom");
+        document.getElementById('exampleModal').classList.add("custom");
+      } else {
+        document.getElementById('gallery').classList.remove("custom");
+        document.getElementById('exampleModal').classList.remove("custom");
+      }
+    };
+
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
